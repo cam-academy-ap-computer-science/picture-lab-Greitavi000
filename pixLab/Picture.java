@@ -161,21 +161,23 @@ public class Picture extends SimplePicture
   }
   
   
-  public void MirrorHorisontal()
+
+  public void mirrorHorizontal()
   {
-    Pixel[][] pixels = this.getPixels2D();
-    Pixel topPixel = null;
-    Pixel botPixel = null;
-    int heigh = pixels.length;
-    for (int row = 0; row <  heigh / 2; row++)
-    {
-      for (int col = 0; col <pixels.length; col++)
-      {
-    	  topPixel = pixels[row][col];
-        botPixel = pixels[heigh - 1 -row ][col];
-        botPixel.setColor(topPixel.getColor());
-      }
-    } 
+
+  Pixel[][] pixels = this.getPixels2D();
+  Pixel topPixel = null;
+  Pixel botPixel = null;
+  int height = pixels.length;
+  for (int row = 0; row < height / 2; row++)
+  {
+  for (int col = 0; col < pixels[0].length; col++)
+  {
+  topPixel = pixels[row][col];
+  botPixel = pixels[height - row - 1][col];
+  botPixel.setColor(topPixel.getColor());
+  }
+  }
   }
   
   public void MirrorVerticalRightToLeft()

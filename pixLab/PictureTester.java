@@ -32,7 +32,7 @@ public class PictureTester
   {
     Picture caterpillar = new Picture("U:/git/picture-lab-Greitavi000/images/temple.jpg");
     caterpillar.explore();
-    caterpillar.MirrorHorisontal();
+    caterpillar.mirrorHorizontal();
     caterpillar.explore();
   }
   
@@ -108,15 +108,18 @@ public class PictureTester
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-	  //testMirrorVerticalRightToLeft();
-	  testMirrorHorisontal();
+	//testMirrorVerticalRightToLeft();
+	//testMirrorHorisontal();
     //testMirrorTemple();
-    //testMirrorArms();
+	  
+	  //testMirrorArms();
     //testMirrorGull();
-    //testMirrorDiagonal();
+	 //testMirrorDiagonal();
+	  
     //testCollage();
     //testCopy();
     //testEdgeDetection();
+	 
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();

@@ -255,18 +255,19 @@ public class Picture extends SimplePicture
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("U:/git/picture-lab-Greitavi000/images/flower1.jpg");
+    Picture flower2 = new Picture("U:/git/picture-lab-Greitavi000/images/flower2.jpg");
+    Picture flower3 = new Picture("U:/git/picture-lab-Greitavi000/images/caterpillar.jpg");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
-    this.copy(flower1,200,0);
-    Picture flowerNoBlue = new Picture(flower2);
+    this.copy(flower3,200,0);
+    Picture flowerNoBlue = new Picture(flower1);
     flowerNoBlue.zeroBlue();
-    this.copy(flowerNoBlue,300,0);
-    this.copy(flower1,400,0);
-    this.copy(flower2,500,0);
+    this.copy(flowerNoBlue,600,0);
+    this.copy(flower2,800,0);
+    this.copy(flower3,1000,0);
     this.mirrorVertical();
-    this.write("collage.jpg");
+    this.write("U:/git/picture-lab-Greitavi000/images/collage.jpg");
   }
   
   
@@ -283,6 +284,28 @@ public class Picture extends SimplePicture
     {
       for (int col = 0; 
            col < pixels[0].length-1; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][col+1];
+        rightColor = rightPixel.getColor();
+        if (leftPixel.colorDistance(rightColor) > 
+            edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+  }
+  public void edgeDetection2(int edgeDist)
+  {
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color rightColor = null;
+    for (int row = 0; row < pixels[0].length-1; row++)
+    {
+      for (int col = 0; 
+           col < pixels.length; col++)
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][col+1];

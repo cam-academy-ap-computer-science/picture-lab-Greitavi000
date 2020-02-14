@@ -214,8 +214,7 @@ public class Picture extends SimplePicture
       {
         
         leftPixel = pixels[row][col];      
-        rightPixel = pixels[row]                       
-                         [mirrorPoint - col + mirrorPoint];
+        rightPixel = pixels[row] [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
@@ -251,7 +250,8 @@ public class Picture extends SimplePicture
       }
     }   
   }
-
+  
+ 
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
@@ -298,23 +298,22 @@ public class Picture extends SimplePicture
   }
   public void edgeDetection2(int edgeDist)
   {
-    Pixel leftPixel = null;
-    Pixel rightPixel = null;
+    Pixel bottomPixel = null;
+    Pixel topPixel = null;
     Pixel[][] pixels = this.getPixels2D();
-    Color rightColor = null;
+    Color topColor = null;
     for (int col= 0; col < pixels.length; col++)
     {
       for (int row = 0; 
     		  row < pixels[0].length-1; row++)
       {
-        leftPixel = pixels[col][row];
-        rightPixel = pixels[col][row+1];
-        rightColor = rightPixel.getColor();
-        if (leftPixel.colorDistance(rightColor) > 
-            edgeDist)
-          leftPixel.setColor(Color.BLACK);
+    	  bottomPixel = pixels[col][row];
+        topPixel = pixels[col][row+1];
+        topColor = topPixel.getColor();
+        if (bottomPixel.colorDistance(topColor) > edgeDist)
+        	bottomPixel.setColor(Color.BLACK);
         else
-          leftPixel.setColor(Color.WHITE);
+        	bottomPixel.setColor(Color.WHITE);
       }
     }
   }

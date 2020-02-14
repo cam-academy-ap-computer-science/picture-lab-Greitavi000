@@ -70,7 +70,7 @@ public class PictureTester
   }
   public static void testEdgeDetection2()
   {
-    Picture swan = new Picture("U:/git/picture-lab-Greitavi000/images/swan.jpg");
+    Picture swan = new Picture("C:/Users/greitavi000/Downloads/IMG-3263.jpg");
     swan.edgeDetection2(10);
     swan.explore();
   }

@@ -36,6 +36,14 @@ public class PictureTester
     caterpillar.explore();
   }
   
+  public static void testmirrorHorizontalBotToTop()
+  {
+    Picture caterpillar = new Picture("U:/git/picture-lab-Greitavi000/images/temple.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontalBotToTop();
+    caterpillar.explore();
+  }
+  
   public static void testMirrorVerticalRightToLeft()
   {
     Picture caterpillar = new Picture("U:/git/picture-lab-Greitavi000/images/koala.jpg");
@@ -88,7 +96,26 @@ public class PictureTester
 	    beach.KeepOnlyRed();
 	    beach.explore();
   }
+
+  public static void testNegate() {
+	  Picture beach = new Picture("U:/git/picture-lab-Greitavi000/images/beach.jpg");
+	  beach.explore();
+	    beach.negate();
+	    beach.explore();
+  }
+  public static void testGrayscale() {
+	  Picture beach = new Picture("U:/git/picture-lab-Greitavi000/images/beach.jpg");
+	  beach.explore();
+	    beach.Grayscale();
+	    beach.explore();
+  }
   
+  public static void testFixUnderwater() {
+	  Picture water = new Picture("U:/git/picture-lab-Greitavi000/images/water.jpg");
+	  water.explore();
+	  water.FixUnderwater();
+	  water.explore();
+  }
   
   public static void testKeepOnlyGreen() {
 	  Picture beach = new Picture("U:/git/picture-lab-Greitavi000/images/beach.jpg");
@@ -96,9 +123,20 @@ public class PictureTester
 	    beach.KeepOnlyGreen();
 	    beach.explore();
   }
-  
-  
-  
+  public static void testMirrorArms() {
+	  Picture snowman = new Picture("U:/git/picture-lab-Greitavi000/images/snowman.jpg");
+	  snowman.explore();
+	  snowman.MirrorArms();
+	  snowman.explore();
+  }
+ 
+ 
+	  public static void testMirrorGull() {
+	  Picture seagull = new Picture("U:/git/picture-lab-Greitavi000/images/seagull.jpg");
+	  seagull.explore();
+	  seagull.MirrorGull();
+	  seagull.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -106,19 +144,20 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-   // testZeroBlue();
+    //testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();
-    //testGrayscale();
-    //testFixUnderwater();
+   // testGrayscale();
+   // testFixUnderwater();
     //testMirrorVertical();
 	//testMirrorVerticalRightToLeft();
 	//testMirrorHorisontal();
+	 // testmirrorHorizontalBotToTop();
     //testMirrorTemple();
 	  
-	  //testMirrorArms();
+	 testMirrorArms();
     //testMirrorGull();
 	 //testMirrorDiagonal();
 	  
@@ -126,7 +165,7 @@ public class PictureTester
     //testCopy();
     //testEdgeDetection();
 	 
-   testEdgeDetection2();
+   //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);

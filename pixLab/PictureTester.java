@@ -72,7 +72,8 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("U:/git/picture-lab-Greitavi000/images/swan.jpg");
+    Picture swan = new Picture("U:/git/picture-lab-Greitavi000/images/IMG-0362.jpg");
+    swan.explore();
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -157,13 +158,13 @@ public class PictureTester
 	 // testmirrorHorizontalBotToTop();
     //testMirrorTemple();
 	  
-	 testMirrorArms();
+	// testMirrorArms();
     //testMirrorGull();
 	 //testMirrorDiagonal();
 	  
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
 	 
    //testEdgeDetection2();
     //testChromakey();
